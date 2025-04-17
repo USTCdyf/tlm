@@ -1,0 +1,20 @@
+
+  0%|                                                                                                                                                                                                                    | 0/570 [00:00<?, ?it/s]/usr/local/lib/python3.11/dist-packages/torch/nn/parallel/_functions.py:71: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/opt/tiger/dyf/dyf/train/train.py", line 145, in <module>
+    train(config=config)
+  File "/opt/tiger/dyf/dyf/train/train.py", line 136, in train
+    trainer.train()
+  File "/home/tiger/.local/lib/python3.11/site-packages/transformers/trainer.py", line 2245, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/tiger/.local/lib/python3.11/site-packages/transformers/trainer.py", line 2560, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tiger/.local/lib/python3.11/site-packages/transformers/trainer.py", line 3782, in training_step
+    self.accelerator.backward(loss, **kwargs)
+  File "/home/tiger/.local/lib/python3.11/site-packages/accelerate/accelerator.py", line 2446, in backward
+    self.deepspeed_engine_wrapped.backward(loss, **kwargs)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'backward'
